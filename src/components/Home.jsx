@@ -1,35 +1,52 @@
-import React from 'react'
-import HeroImage from '../assets/herolImage.JPG'
-import {MdOutlineKeyboardArrowRight} from 'react-icons/md'
+import React from "react";
+import HeroImage from "../assets/hero.png";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-scroll";
+
 const Home = () => {
   return (
-    <div name="home" className='h-screen w-full bg-gradient-to-b from-black via-black to-gray-800'>
+    <div
+      name="home"
+      className="h-screen w-full bg-gradient-to-b from-black via-black to-gray-800"
+    >
+      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-1 md:flex-row " >
+        
+        <div className="flex basis-1 flex-col justify-center h-full mr-11">
+          <h2 className="text-4xl sm:text-7xl font-bold text-white">
+            I'm a 
+          </h2>
+          <h2 className="text-4xl sm:text-7xl font-bold text-white">
+            Full Stack Developer
+          </h2>
+          <p className="text-gray-400 py-4 max-w-md text-xl">
+            As a Double Degree Student of Computer Science and Business, I am passionate about empowering business through technologies. 
+          </p>
 
-        <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center px-4 md:flex-row'>
-            <div className='flex flex-col justify-center h-full'>
-                
-                <h2 className='text-4xl sm:text-7xl font-bold text-white'>I'm a Full Stack Developer</h2>
-            
-                <p className='text-gray-500 py-4 max-w-md'>
-                    As a Double Degree student of Computer Science and Business Administration, I'm passionate about utilizing Tech to empowering Businesses.
-                </p>
-
-                <div>
-                    <button className='group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-gray-500 cursor-pointer'>
-                        Explore My Work 
-                        <span className='group-hover:rotate-90 duration-300'>
-                            <MdOutlineKeyboardArrowRight size={30} className="ml-1"></MdOutlineKeyboardArrowRight>
-                        </span>
-                    </button>
-                </div>
-            </div>
-
-            <div className='my-20'>
-                <img src={HeroImage} alt="my profile pic" className='rounded-3xl mx-auto w-2/3 object-cover'/>
-            </div>
+          <div>
+            <Link
+              to="portfolio"
+              smooth
+              duration={500}
+              className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+            >
+              Portfolio
+              <span className="group-hover:rotate-90 duration-300">
+                <MdOutlineKeyboardArrowRight size={25} className="ml-1" />
+              </span>
+            </Link>
+          </div>
         </div>
-    </div>
-  )
-}
 
-export default Home
+        <div className="mx-4">
+          <img
+            src={HeroImage}
+            alt="my profile"
+            className="rounded-2xl mx-auto w-2/3 md:w-full"
+          /> 
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
